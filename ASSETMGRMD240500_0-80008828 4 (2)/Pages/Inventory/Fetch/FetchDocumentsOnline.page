@@ -1,0 +1,111 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Type": "SectionCommon.Type.Header",
+						"_Name": "SectionCommonTypeHeader0",
+						"AccessoryType": "None",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "InventoryObjects",
+						"Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/Inventory/Fetch/InventoryObjectsQueryOptions.js"
+					},
+					"_Name": "OnlineDocumentsListViewSection",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "$(L,no_documents_found_on_online_search)",
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"ObjectCell": {
+						"Title": "/SAPAssetManager/Rules/Inventory/Fetch/GetInventoryObjectId.js",
+						"Subhead": "/SAPAssetManager/Rules/Inventory/Fetch/GetInventoryObjectSubHeadText.js",
+						"Footnote": "/SAPAssetManager/Rules/Inventory/Fetch/GetDocumentTypeText.js",
+						"StatusText": "/SAPAssetManager/Rules/Inventory/Fetch/GeDocumentItemCount.js",
+						"SubstatusText": "/SAPAssetManager/Rules/Inventory/Fetch/GetDocumentDateText.js",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "None",
+						"Tags": [],
+						"AvatarStack": {
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"ImageIsCircular": true
+						},
+						"OnAccessoryButtonPress": "/SAPAssetManager/Rules/Inventory/Fetch/DownloadDocuments.js",
+						"Selected": false,
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": []
+						}
+					},
+					"Search": {
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 1
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"Mode": "Multiple",
+						"ExitOnLastDeselect": false
+					},
+					"OnSelectionChanged": "/SAPAssetManager/Rules/Inventory/Fetch/OnDocumentSelectedOrUnSelected.js"
+				}
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FetchOnlineDocumentsPage",
+	"Caption": "$(L,app_display_name)",
+	"PrefersLargeCaption": true,
+	"OnActivityBackPressed": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/CancelCheckOnBackNavAndroid.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,cancel)",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Inventory/Fetch/IsSearchStringAvailable.js",
+				"OnPress": "/SAPAssetManager/Rules/Inventory/Fetch/ClearStateAndExit.js"
+			},
+			{
+				"Text": "$(L,download)",
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Rules/Inventory/Fetch/SetDownloadDocumentsVariable.js"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

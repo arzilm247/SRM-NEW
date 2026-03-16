@@ -1,0 +1,153 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "Warehouse",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Document_Number",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Document Number ",
+							"PlaceHolder": "Document Number",
+							"KeyboardType": "Default",
+							"AlternateInput": "Barcode",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": [
+								"OD1"
+							],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker0",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Warehouse",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"Search": {
+								"Placeholder": "nnjjn"
+							},
+							"PickerItems": [
+								"OD1",
+								"611",
+								"581"
+							]
+						},
+						{
+							"Value": "/ZSSAM2405_SRM/Rules/ZGetFromDate.js",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "Doc_date_from",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Doc date from",
+							"IsEditable": true,
+							"Mode": "Date"
+						},
+						{
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "Doc_date_to",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Doc date to ",
+							"IsEditable": true,
+							"Mode": "Date"
+						},
+						{
+							"Value": "52",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Material",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Material ",
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PickingSearch_Transfer_Order",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar17",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "Reset",
+				"Visible": true,
+				"Title": "Cancel",
+				"OnPress": "/ZSSAM2405_SRM/Actions/CloseModalPage_Cancel.action",
+				"Enabled": true,
+				"ButtonType": "Primary",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			},
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem1",
+				"Visible": true,
+				"Title": "Reset",
+				"OnPress": "/ZSSAM2405_SRM/Rules/ZRestFunctionOnTOSearch.js",
+				"Enabled": true,
+				"ButtonType": "Primary",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			},
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem0",
+				"Visible": true,
+				"Title": "Go",
+				"OnPress": "/ZSSAM2405_SRM/Actions/Search/SearchTRHeaderForPickingProgressBanner.action",
+				"Enabled": true,
+				"ButtonType": "Primary",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
+}

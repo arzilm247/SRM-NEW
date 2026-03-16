@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "DocIDMentry"
+	},
+	"Message": "Please enter the Transaction Order Document ID!",
+	"Title": "Transaction Order Document ID",
+	"OKCaption": "OK"
+}

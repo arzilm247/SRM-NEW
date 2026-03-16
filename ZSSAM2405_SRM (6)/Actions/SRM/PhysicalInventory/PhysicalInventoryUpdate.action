@@ -1,0 +1,16 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "PhysicalInventoryUpdate"
+	},
+	"OnFailure": "/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/UpdateFailureMessage.action",
+	"OnSuccess": "/ZSSAM2405_SRM/Actions/CloseModalPage_Complete.action",
+	"Target": {
+		"Service": "/ZSSAM2405_SRM/Services/ODSMWHOffline.service",
+		"EntitySet": "WMPhyItemsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"Quant": "{CountedQty}"
+	}
+}

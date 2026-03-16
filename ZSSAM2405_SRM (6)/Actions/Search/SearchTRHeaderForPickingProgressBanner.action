@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ProgressBanner",
+	"ActionResult": {
+		"_Name": "SearchTRHeaderForPickingProgressBanner"
+	},
+	"OnSuccess": "/ZSSAM2405_SRM/Rules/SRM/Fetch/TransferOrderPicking/FetchTRHeaderOnlineForToPicking.js",
+	"Message": "Fetch TR Header"
+}

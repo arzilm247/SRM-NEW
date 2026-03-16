@@ -1,0 +1,89 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+						"EntitySet": "TOHeaderSet"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": [],
+							"_Type": "ObjectCell.Type.ContextMenu"
+						},
+						"Title": "Transfer Order -  {TransferOrder}",
+						"Subhead": "Warehouse No - {WarehouseNum}",
+						"Footnote": "Movement Type - {InvMovType} ",
+						"DisplayDescriptionInMobile": true,
+						"StatusText": "Shipment Type - {ShipmentTyp}",
+						"SubstatusText": "Creation Date - {CreationDate}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "None",
+						"Tags": [],
+						"AvatarStack": {
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [],
+							"ImageIsCircular": true
+						},
+						"OnPress": "/ZSSAM2405_SRM/Actions/SRM/BinToBin/NavTo_BTB_Detail_Main.action",
+						"_Type": "ObjectTable.Type.ObjectCell",
+						"Selected": false
+					},
+					"Search": {
+						"Enabled": true
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "BTB_list",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar3",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

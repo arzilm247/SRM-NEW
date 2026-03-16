@@ -1,0 +1,112 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Type": "SectionCommon.Type.Header",
+						"_Name": "SectionCommonTypeHeader0",
+						"AccessoryType": "None",
+						"UseTopPadding": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+						"EntitySet": "TOHeaderSet"
+					},
+					"_Name": "OnlineTRDocumentsListViewSection",
+					"Visible": true,
+					"EmptySection": {
+						"Caption": "No TR Documents Found On Online Search",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": [],
+							"_Type": "ObjectCell.Type.ContextMenu"
+						},
+						"Title": "{TransferOrder}",
+						"Subhead": "{WarehouseNum}",
+						"Footnote": "Transfer Order",
+						"StatusText": "Items",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "None",
+						"Tags": [],
+						"AvatarStack": {
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"ImageIsCircular": true
+						},
+						"OnAccessoryButtonPress": "/SAPAssetManager/Rules/Inventory/Fetch/DownloadDocuments.js",
+						"_Type": "ObjectTable.Type.ObjectCell",
+						"Selected": false
+					},
+					"Search": {
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 1
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"Mode": "Multiple",
+						"ExitOnLastDeselect": false
+					},
+					"OnSelectionChanged": "/SAPAssetManager/Rules/Inventory/Fetch/OnDocumentSelectedOrUnSelected.js"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FetchOnlineDocumentsPage",
+	"OnActivityBackPressed": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/CancelCheckOnBackNavAndroid.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,cancel)",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Inventory/Fetch/IsSearchStringAvailable.js",
+				"OnPress": "/SAPAssetManager/Rules/Inventory/Fetch/ClearStateAndExit.js"
+			},
+			{
+				"Text": "$(L,download)",
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/ZSSAM2405_SRM/Actions/SRM/TranferOrder/NavTo_ToScreen.action"
+			}
+		],
+		"_Name": "ActionBar0",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "Service": "/ZSSAM2405_SRM/Services/MasterService.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnFailure": "/ZSSAM2405_SRM/Actions/GenericToastMessage.action",
+    "ActionResult": {
+        "_Name": "InitializeMasterService"
+    }
+}

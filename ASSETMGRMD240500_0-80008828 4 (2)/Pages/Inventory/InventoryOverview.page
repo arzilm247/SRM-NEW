@@ -1,0 +1,88 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"HeadlineText": "/SAPAssetManager/Rules/Inventory/Fetch/InventoryPlantCaption.js",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading"
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				}
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		},
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "TabsControl",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "$(L, all_documents_label)",
+					"PageToOpen": "/SAPAssetManager/Pages/Inventory/InboundOutbound/InboundOutboundList.page",
+					"_Name": "AllDocumentsListTab"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "$(L,overview_recent)",
+					"OnPress": "/SAPAssetManager/Rules/Inventory/MaterialDocument/RefreshPage.js",
+					"PageToOpen": "/SAPAssetManager/Pages/Inventory/MaterialDocument/MaterialDocumentRecentList.page",
+					"_Name": "RecentListTab"
+				}
+			],
+			"PreloadTabs": [
+				2
+			],
+			"Position": "Top",
+			"TabStripType": "Normal",
+			"SwipeEnabled": true
+		}
+	],
+	"_Type": "Page",
+	"_Name": "InventoryOverview",
+	"Caption": "$(L,app_display_name)",
+	"OnLoaded": "/SAPAssetManager/Rules/Inventory/Overview/RefreshOverviewPage.js",
+	"OnReturning": "/SAPAssetManager/Rules/Inventory/Overview/RefreshAllTabsOverviewPage.js",
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"Icon": "$(PLT,/SAPAssetManager/Images/fetch.png,/SAPAssetManager/Images/fetch.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Common/IsDemoModeDisabled.js",
+				"OnPress": "/SAPAssetManager/Actions/Inventory/Fetch/FetchDocuments.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "$(L,add)",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/Inventory/CreateUpdateDelete/CreateDocumentPopover.action"
+			},
+			{
+				"_Name": "AutoSync",
+				"Caption": "$(L,sync)",
+				"Icon": "$(PLT, /SAPAssetManager/Images/auto-sync.pdf, /SAPAssetManager/Images/auto-sync.android.png, '',  /SAPAssetManager/Images/auto-sync.windows.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"IconText": "SyncIcon",
+				"Visible": "/SAPAssetManager/Rules/Sync/IsAutoSyncInProgress.js",
+				"OnPress": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

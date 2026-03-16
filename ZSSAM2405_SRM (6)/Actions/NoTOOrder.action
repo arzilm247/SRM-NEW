@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "NoTOOrder"
+	},
+	"Message": "No Transfer Order found for the given ID.",
+	"Title": "Transfer Order not Found",
+	"OKCaption": "OK"
+}

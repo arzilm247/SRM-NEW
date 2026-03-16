@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "ZTOHeaderNotFound"
+	},
+	"Message": "No Transection Order Found in the Service ! ",
+	"Title": "TO Header Not Found",
+	"OKCaption": "OK"
+}

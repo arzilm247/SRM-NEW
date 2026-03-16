@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "UpdateTOItemEntityFailureMessage"
+	},
+	"Message": "ReadLink = {@odata.readLink}",
+	"Title": "Update Item",
+	"OKCaption": "OK"
+}

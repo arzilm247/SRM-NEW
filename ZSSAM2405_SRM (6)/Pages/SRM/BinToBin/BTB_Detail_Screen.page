@@ -1,0 +1,105 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "{TransferOrder}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "Transfer_Order_Number",
+							"KeyName": "Transfer Order Number",
+							"Visible": true
+						},
+						{
+							"Value": "{WarehouseNum}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "WarehouseNumber",
+							"KeyName": "Warehouse Number",
+							"Visible": true
+						},
+						{
+							"Value": "{CreationDate}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "CreatedOn",
+							"KeyName": "Created On",
+							"Visible": true
+						},
+						{
+							"Value": "Value",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "CreatedBy",
+							"KeyName": "Created By",
+							"Visible": true
+						},
+						{
+							"Value": "{InvMovType}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "MovementType",
+							"KeyName": "Movement Type",
+							"Visible": true
+						},
+						{
+							"Value": "Value",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "ReferenceDocument",
+							"KeyName": "Reference Document",
+							"Visible": true
+						},
+						{
+							"Value": "Value",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "Status",
+							"KeyName": "Status",
+							"Visible": true
+						},
+						{
+							"Value": "{ItemCount}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "NoofItems",
+							"KeyName": "No of Items",
+							"Visible": true
+						},
+						{
+							"Value": "{ShipmentTyp}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "ShipmentType",
+							"KeyName": "Shipment Type",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"Layout": {
+						"NumberOfColumns": 1
+					}
+				}
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"_Name": "BTB_Detail_Screen",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar1",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

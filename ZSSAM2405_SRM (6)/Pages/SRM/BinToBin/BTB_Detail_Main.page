@@ -1,0 +1,32 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "Tabs0",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "DETAILS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/BinToBin/BTB_Detail_Screen.page",
+					"_Name": "details"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "ITEMS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/BinToBin/BTB_Items.page",
+					"_Name": "TabItem1"
+				}
+			],
+			"Position": "Top",
+			"TabStripType": "Normal",
+			"SwipeEnabled": true
+		}
+	],
+	"_Type": "Page",
+	"_Name": "BTB_Detail_Main",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar2",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

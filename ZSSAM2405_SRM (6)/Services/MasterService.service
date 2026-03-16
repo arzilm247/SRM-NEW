@@ -1,0 +1,12 @@
+{
+	"DestinationName": "DEST_SAM2405_PPROP_MASTER",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": false,
+	"OnlineOptions": {
+		"ServiceOptions": {
+			"supportsBind": false
+		}
+	},
+	"SourceType": "Mobile",
+	"RestService": false
+}

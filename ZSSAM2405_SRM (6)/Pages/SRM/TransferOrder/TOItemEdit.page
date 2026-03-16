@@ -1,0 +1,143 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "{Material}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty0",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Material",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{SourceStorBin}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty1",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Source Store Bin",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{DestStorBin}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCWarehouseNumberEdit",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": " Destination Bin",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{StorLocation}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty2",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Storage Location",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{ActualQty}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCQuantityEdit",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Quantity",
+							"KeyboardType": "Number",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{SourceStorTyp}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty3",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Source Storage Type",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "{DestStorTyp}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty4",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Destination Storage Type",
+							"Enabled": true,
+							"IsEditable": false
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+		"EntitySet": "TOItemsSet"
+	},
+	"_Type": "Page",
+	"Caption": "Item Edit",
+	"_Name": "TOItemEdit",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/ZSSAM2405_SRM/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem1",
+				"Caption": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/ZSSAM2405_SRM/Actions/SRM/TranferOrder/Item_UpdateEntity.action"
+			}
+		],
+		"_Name": "ActionBar6",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

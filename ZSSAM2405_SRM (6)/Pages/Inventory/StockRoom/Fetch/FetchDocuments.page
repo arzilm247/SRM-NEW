@@ -1,0 +1,146 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "DocumentId",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Caption": "$(L,document_id)",
+							"AlternateInput": "Barcode",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "WarehouseListPicker",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "Warehouse",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"PickerItems": [
+								"Warehouse 1",
+								"Warehouse 2",
+								"Warehouse 3"
+							]
+						},
+						{
+							"RequiredIndicator": false,
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "DateRangeSwitch",
+							"IsVisible": true,
+							"Caption": "$(L,date_range)",
+							"OnValueChange": "/SAPAssetManager/Rules/Inventory/Fetch/SetDateRangeVisibility.js",
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "StartDate",
+							"RequiredIndicator": false,
+							"IsVisible": false,
+							"Caption": "$(L,start_date)",
+							"IsEditable": true,
+							"Mode": "Date"
+						},
+						{
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "EndDate",
+							"RequiredIndicator": false,
+							"IsVisible": false,
+							"Caption": "$(L,end_date)",
+							"IsEditable": true,
+							"Mode": "Date"
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "MaterialLstPkr",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"Caption": "Material",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"AllowDefaultValueIfOneItem": true,
+							"IsEditable": true,
+							"Search": {
+								"Enabled": true,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3
+							},
+							"PickerItems": [
+								"Material 1",
+								"Material 2",
+								"Material 3"
+							]
+						}
+					],
+					"_Name": "FormCellSection0",
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"RequiredIndicator": false,
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "FormCellButton0",
+							"IsVisible": true,
+							"Styles": {
+								"Button": "FetchResetButton"
+							},
+							"Title": "$(L,reset)",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"ImagePosition": "Leading",
+							"Enabled": true
+						}
+					],
+					"_Name": "FormCellSection1",
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FetchDocumentsPage",
+	"OnActivityBackPressed": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/CancelCheckOnBackNavAndroid.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,cancel)",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+			},
+			{
+				"Text": "$(L,fetch)",
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/ZSSAM2405_SRM/Rules/Inventory/StockRoom/Search/FetchTRDocumentsWithActivityIndicator.js"
+			}
+		],
+		"_Name": "ActionBar0",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

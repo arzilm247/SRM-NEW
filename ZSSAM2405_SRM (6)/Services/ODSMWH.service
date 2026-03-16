@@ -1,0 +1,10 @@
+{
+	"ServiceUrl": "/destinations/mobileservices",
+	"DestinationName": "com.ods.mwh",
+	"LanguageURLParam": "sap-language",
+	"Headers": {
+		"SAP-PASSPORT": "/SAPAssetManager/Rules/Common/Passport/GetSAPPassportHeaderValue.js"
+	},
+	"OfflineEnabled": false,
+	"SourceType": "Mobile"
+}

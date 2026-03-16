@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToTOPickingSearchPage"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/TransferOrder/Picking/PickingTO_Search_Screen.page"
+}

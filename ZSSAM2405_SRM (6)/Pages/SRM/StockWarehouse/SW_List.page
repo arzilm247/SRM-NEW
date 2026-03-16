@@ -1,0 +1,98 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"Service": "/ZSSAM2405_SRM/Services/MasterService.service",
+						"EntitySet": "StockOverviewSet"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": [],
+							"_Type": "ObjectCell.Type.ContextMenu"
+						},
+						"Title": "{Material} - {StorageBin}",
+						"Subhead": "{MatDescription}",
+						"Footnote": "Qty: {TotalStock} {BaseUnit}",
+						"Description": "{WarehouseDescription}",
+						"DisplayDescriptionInMobile": true,
+						"StatusText": "Stock Category: {StockCategory}",
+						"SubstatusText": "Available: {AvailableStock} {BaseUnit}",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "None",
+						"ProgressIndicator": "InProgress",
+						"Tags": [],
+						"AvatarStack": {
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [],
+							"ImageIsCircular": true
+						},
+						"_Type": "ObjectTable.Type.ObjectCell",
+						"Selected": false
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SW_List",
+	"OnLoaded": "/ZSSAM2405_SRM/Rules/SRM/StockWarehouse/TestStockLoad.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "RefreshOnMobile",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/ZSSAM2405_SRM/Rules/SRM/StockWarehouse/TestStockLoad.js"
+			}
+		],
+		"_Name": "ActionBar3",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

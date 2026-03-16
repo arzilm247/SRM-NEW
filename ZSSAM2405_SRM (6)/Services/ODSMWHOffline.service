@@ -1,0 +1,6 @@
+{
+	"DestinationName": "DEST_MWH_PPROP",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": true,
+	"SourceType": "Mobile"
+}

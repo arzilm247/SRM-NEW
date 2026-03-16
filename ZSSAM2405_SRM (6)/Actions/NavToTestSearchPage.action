@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToTestSearchPage"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/ZTestSearch.page"
+}

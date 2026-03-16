@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavTo_SWSeach"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/StockWarehouse/SW_Search.page"
+}

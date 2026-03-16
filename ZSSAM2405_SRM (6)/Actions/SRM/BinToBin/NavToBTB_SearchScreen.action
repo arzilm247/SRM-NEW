@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToBTB_SearchScreen"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/BinToBin/BTB_TO_Search_Screen.page"
+}

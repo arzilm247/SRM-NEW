@@ -1,0 +1,157 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"RequiredIndicator": false,
+							"_Type": "Control.Type.FormCell.SegmentedControl",
+							"_Name": "FormCellSegmentedControl0",
+							"IsVisible": true,
+							"Separator": false,
+							"OnValueChange": "/ZSSAM2405_SRM/Rules/ZSegmentOnvalueChange.js",
+							"IsEditable": true,
+							"ApportionsSegmentWidthsByContent": false,
+							"Segments": [
+								"Material",
+								"Batch",
+								"Bin"
+							]
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Grouping": {
+						"GroupingProperties": [],
+						"Header": {
+							"Items": []
+						}
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": "{#Application/#ClientData/FilteredItemsList}",
+					"_Name": "SectionObjectTable2",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true,
+							"LeadingItems": [],
+							"TrailingItems": [],
+							"_Type": "ObjectCell.Type.ContextMenu"
+						},
+						"Title": "Destination Bin - {DestStorBin}",
+						"Subhead": "Storage location - {StorLocation}",
+						"Footnote": "Material - {Material}",
+						"Description": "Quantity - {DestTargQty}",
+						"DisplayDescriptionInMobile": true,
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "None",
+						"Tags": [
+							{
+								"Color": "Blue",
+								"Text": "Batch - {Batch}"
+							}
+						],
+						"AvatarStack": {
+							"Avatars": [],
+							"ImageIsCircular": true,
+							"ImageHasBorder": false
+						},
+						"AvatarGrid": {
+							"Avatars": [],
+							"ImageIsCircular": true
+						},
+						"OnPress": "/ZSSAM2405_SRM/Actions/SRM/TranferOrder/NavToTOItemEditPage.action",
+						"_Type": "ObjectTable.Type.ObjectCell",
+						"Selected": false
+					},
+					"Search": {
+						"OnChange": "/ZSSAM2405_SRM/Rules/ZItemsListPageFilter.js",
+						"Enabled": "/ZSSAM2405_SRM/Rules/ZEnableItemsListPageSearchEnable.js",
+						"Placeholder": "/ZSSAM2405_SRM/Rules/ZItemsListPlacedHolder.js",
+						"BarcodeScanner": true
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": false,
+					"Selection": {
+						"ExitOnLastDeselect": true,
+						"LongPressToEnable": "None",
+						"Mode": "None"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TO_Item_Details_Screen",
+	"OnLoaded": "/ZSSAM2405_SRM/Rules/ZLoadItemsForTO.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/ZSSAM2405_SRM/Actions/CloseModalPage_Cancel.action"
+			}
+		],
+		"_Name": "ActionBar15",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "Confirm",
+				"Visible": true,
+				"Title": "Confirm All ",
+				"OnPress": "/ZSSAM2405_SRM/Actions/ConfirmAll.action",
+				"Enabled": true,
+				"ButtonType": "Primary",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
+}

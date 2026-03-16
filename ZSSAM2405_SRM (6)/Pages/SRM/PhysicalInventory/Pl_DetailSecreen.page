@@ -1,0 +1,77 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "{PhyInvDoc}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "DocumentNumber",
+							"KeyName": "Document Number",
+							"Visible": true
+						},
+						{
+							"Value": "{Warehouse}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "Warehose Number",
+							"KeyName": "Warehose Number",
+							"Visible": true
+						},
+						{
+							"Value": "{StorageType}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "StorgeType",
+							"KeyName": "Storge Type",
+							"Visible": true
+						},
+						{
+							"Value": "/ZSSAM2405_SRM/Rules/SRM/PhysicalInventory/PI_DateFormating.js",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "PlannedDate",
+							"KeyName": "Planned Date",
+							"Visible": true
+						},
+						{
+							"Value": "{Status}",
+							"_Type": "KeyValue.Type.Item",
+							"_Name": "Status",
+							"KeyName": "Status",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 1
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Pl_DetailSecreen",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar2",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

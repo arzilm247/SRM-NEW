@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavTo_TEST006Page"
+	},
+	"PageToOpen": "/SAPAssetManager/Pages/WorkOrders/TEST_006.page"
+}

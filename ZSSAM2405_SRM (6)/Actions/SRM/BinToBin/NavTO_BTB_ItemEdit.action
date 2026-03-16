@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavTO_BTB_ItemEdit"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/BinToBin/BTB_ItemEdit.page"
+}

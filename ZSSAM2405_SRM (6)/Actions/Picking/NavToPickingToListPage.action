@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToPickingToListPage"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/TransferOrder/Picking/TO_List.page"
+}

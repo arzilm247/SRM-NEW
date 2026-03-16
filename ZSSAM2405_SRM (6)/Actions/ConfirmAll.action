@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "ConfirmAll"
+	},
+	"Message": "Confirmed all transfer order items",
+	"Title": "Confirmed",
+	"OKCaption": "OK"
+}

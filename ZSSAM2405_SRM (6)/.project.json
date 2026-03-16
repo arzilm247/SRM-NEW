@@ -1,0 +1,60 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "Base",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.eu10-005.hana.ondemand.com",
+		"Organization": "1547a794-9851-4ebf-9513-1a915aa4cb28",
+		"Space": "68d383f6-8fda-45c7-9d1e-07c117e38da7",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "",
+				"URL": ""
+			},
+			"Destination": [
+				{
+					"CF": "",
+					"MDK": "com.ods.mwh",
+					"URL": ""
+				}
+			]
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.eu10.hana.ondemand.com/cockpit/v1/org/1547a794-9851-4ebf-9513-1a915aa4cb28/space/68d383f6-8fda-45c7-9d1e-07c117e38da7/",
+		"AppId": "com.ods.ssam.2405.S4H",
+		"Destination": [
+			"com.ods.mwh",
+			"DEST_SAM2405_ODS_PPROP",
+			"DEST_SAM2405_ONLINE_PPROP",
+			"DEST_SAM2405_PPROP"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=com.ods.ssam.2405.S4H&ClientId=d5d7def7-2aaa-410f-8d31-fe15cc856667&SapCloudPlatformEndpoint=https://ods-ssam-wdx3fi4x-ssam-com-ods-ssam-2405-s4h.cfapps.eu10-005.hana.ondemand.com&AuthorizationEndpointUrl=https://ods-ssam-wdx3fi4x-ssam-com-ods-ssam-2405-s4h.cfapps.eu10-005.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://ods-ssam-wdx3fi4x-ssam-com-ods-ssam-2405-s4h.cfapps.eu10-005.hana.ondemand.com&TokenUrl=https://ods-ssam-wdx3fi4x-ssam-com-ods-ssam-2405-s4h.cfapps.eu10-005.hana.ondemand.com/oauth2/api/v1/token"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true,
+		"Platform": "iOS & Android"
+	},
+	"autoDeployToMSAfterCreation": {
+		"revision": "111"
+	}
+}

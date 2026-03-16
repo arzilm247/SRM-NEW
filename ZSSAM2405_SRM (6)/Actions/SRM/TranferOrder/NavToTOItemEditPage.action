@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToTOItemEditPage"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/TransferOrder/TOItemEdit.page",
+	"ModalPage": true
+}

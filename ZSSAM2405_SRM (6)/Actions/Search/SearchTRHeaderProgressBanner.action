@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ProgressBanner",
+	"ActionResult": {
+		"_Name": "SearchTRHeaderProgressBanner"
+	},
+	"OnSuccess": "/ZSSAM2405_SRM/Rules/SRM/Fetch/FetchTRHeaderOnline.js",
+	"Message": "Fetch TR Header"
+}

@@ -1,0 +1,60 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "Tabs0",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "DETAILS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/TransferOrder/TO_Details_Screen.page",
+					"_Name": "details"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "ITEMS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/TransferOrder/TO_Item_Details_Screen.page",
+					"_Name": "items"
+				}
+			],
+			"Position": "Top",
+			"TabStripType": "Normal",
+			"SwipeEnabled": true
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TO_Details_Screen",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"Icon": "sap-icon://add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true
+			},
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"Icon": "sap-icon://sort",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true
+			},
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem2",
+				"Caption": "Item",
+				"Icon": "sap-icon://filter",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true
+			}
+		],
+		"_Name": "ActionBar7",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

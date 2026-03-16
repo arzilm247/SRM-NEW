@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "Nav_TO_Pl_list_page"
+	},
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/PhysicalInventory/PI_List.page"
+}

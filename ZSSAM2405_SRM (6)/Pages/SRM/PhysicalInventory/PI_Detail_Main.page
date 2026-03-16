@@ -1,0 +1,32 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "Tabs0",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "DETAILS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/PhysicalInventory/Pl_DetailSecreen.page",
+					"_Name": "DETAILS"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "ITEMS",
+					"PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/PhysicalInventory/PI_Items.page",
+					"_Name": "ITEMS"
+				}
+			],
+			"Position": "Top",
+			"TabStripType": "Normal",
+			"SwipeEnabled": true
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PI_Detail_Main",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar1",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

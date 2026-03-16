@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.BannerMessage",
+	"Message": "Failed to load Physical Inventory items to offline cache",
+	"Duration": 7,
+	"Animated": true
+}

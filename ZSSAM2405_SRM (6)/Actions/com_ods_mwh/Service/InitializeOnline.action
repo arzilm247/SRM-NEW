@@ -1,0 +1,9 @@
+{
+    "Service": "/ZSSAM2405_SRM/Services/com_ods_mwh.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnFailure": "/ZSSAM2405_SRM/Actions/com_ods_mwh/Service/InitializeOnlineFailureMessage.action",
+    "ActionResult": {
+        "_Name": "init"
+    }
+}

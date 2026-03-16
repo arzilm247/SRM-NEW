@@ -1,0 +1,22 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FlexibleColumnLayout",
+			"_Name": "FlexibleColumnLayout0",
+			"StartColumn": {
+				"_Name": "StartColumn",
+				"PageToOpen": "/SAPAssetManager/Pages/WorkOrders/WorkOrdersListView.page"
+			},
+			"EndColumn": {
+				"PageToOpen": "/SAPAssetManager/Pages/WorkOrders/WorkOrderDetailsWithObjectCards.page"
+			}
+		}
+	],
+	"_Type": "Page",
+	"_Name": "TEST_005",
+	"Caption": "TEST_005",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar1"
+	}
+}

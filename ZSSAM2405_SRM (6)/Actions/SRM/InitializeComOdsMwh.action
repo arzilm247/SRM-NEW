@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.ODataService.Initialize",
+	"ActionResult": {
+		"_Name": "InitializeComOdsMwh"
+	},
+	"Service": "/ZSSAM2405_SRM/Services/com_ods_mwh.service"
+}

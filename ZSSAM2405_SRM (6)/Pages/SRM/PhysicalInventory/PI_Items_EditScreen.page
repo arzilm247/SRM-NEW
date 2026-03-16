@@ -1,0 +1,127 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "{Material}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Material",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Msterial",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "ShortText",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Short Text",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{StorLoc}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "StorageLocation",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Storage Location",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{StorageBin}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "StorageBin",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Storage Bin",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{CountedQty}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Qty",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Qty",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{BaseUnit}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Unit",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Unit",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Items",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Items",
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PI_Items_EditScreen",
+	"DataBinding": "{/}",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ActionBarItem",
+				"_Name": "ActionBarItem0",
+				"Caption": "SAVE",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/PhysicalInventoryUpdate.action"
+			}
+		],
+		"_Name": "ActionBar3",
+		"_Type": "Control.Type.ActionBar"
+	}
+}

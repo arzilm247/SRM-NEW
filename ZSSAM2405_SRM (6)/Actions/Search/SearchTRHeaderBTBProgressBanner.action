@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ProgressBanner",
+	"ActionResult": {
+		"_Name": "SearchTRHeaderBTBProgressBanner"
+	},
+	"OnSuccess": "/ZSSAM2405_SRM/Rules/SRM/Fetch/BinToBin/FetchTRHeadersForBTB.js",
+	"Message": "Fetch TR Header"
+}

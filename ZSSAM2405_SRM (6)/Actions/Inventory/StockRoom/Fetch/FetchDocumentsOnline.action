@@ -1,0 +1,5 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/ZSSAM2405_SRM/Pages/Inventory/StockRoom/Fetch/FetchDocumentsOnline.page",
+	"ModalPage": true
+}

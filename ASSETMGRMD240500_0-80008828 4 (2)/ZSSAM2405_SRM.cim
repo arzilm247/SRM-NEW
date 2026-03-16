@@ -1,0 +1,14 @@
+{
+	"ProjectName": "ZSSAM2405_SRM",
+	"ApplicationName": "ZSSAM2405_SRM",
+	"IntegrationPoints": [
+		{
+			"Source": "/ZSSAM2405_SRM/Pages/OverviewNew.page",
+			"Target": "/SAPAssetManager/Pages/OverviewNew.page"
+		},
+		{
+			"Source": "/ZSSAM2405_SRM/Pages/SideMenuDrawer.page",
+			"Target": "/SAPAssetManager/Pages/SideMenuDrawer.page"
+		}
+	]
+}

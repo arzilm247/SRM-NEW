@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.ProgressBanner",
+	"ActionResult": {
+		"_Name": "SearchPIHeaderProgressBanner"
+	},
+	"OnSuccess": "/ZSSAM2405_SRM/Rules/SRM/Fetch/PhysicalInventory/FetchPIHeaderOnline.js",
+	"Message": "Fetch PI Header"
+}

@@ -1,0 +1,253 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				"/SAPAssetManager/Pages/Fragments/FunctionalLocation/FunctionalLocationObjectHeader.fragment",
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/QAB/QuickActionBarExtensionSection.fragment",
+					"Properties": {
+						"ExtensionProperties": {
+							"Chips": "/SAPAssetManager/Rules/QAB/EquipmentFunctionalLocationQABChips.js"
+						}
+					}
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/EPDVisualization/EPDVisualization.fragment",
+					"Properties": {
+						"Header": {
+							"UseTopPadding": false
+						}
+					}
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Details/StatusesGridTable.fragment",
+					"Properties": {
+						"Header": {
+							"Caption": "$(L,statuses)",
+							"UseTopPadding": "/SAPAssetManager/Rules/EPD/IsEPDVisualizationAvailable.js"
+						},
+						"Target": "/SAPAssetManager/Rules/Common/DetailsPage/EquipFLocDetailsPageStatusesTable.js"
+					}
+				},
+				"/SAPAssetManager/Pages/Fragments/FunctionalLocation/FunctionalLocationKeyValue.fragment",
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/NotesObjectSection.fragment",
+					"Properties": {
+						"Target": {
+							"EntitySet": "{{#Property:@odata.readLink}}/FuncLocLongText_Nav"
+						},
+						"Visible": "/SAPAssetManager/Rules/Common/IsNewLayoutEnabled.js",
+						"DataSubscriptions": [
+							"MyFuncLocLongTexts"
+						]
+					}
+				},
+				"/SAPAssetManager/Pages/Fragments/FunctionalLocation/FunctionalLocationMeasuringPoints.fragment",
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Equipment/ObjectTableSection.fragment",
+					"Properties": {
+						"Footer": {
+							"AttributeLabel": "/SAPAssetManager/Rules/Equipment/SubEquipment/SubEquipmentCount.js",
+							"Visible": "/SAPAssetManager/Rules/Equipment/SubEquipment/SubEquipmentShouldRenderFooter.js"
+						},
+						"Header": {
+							"UseTopPadding": true
+						},
+						"ObjectCell": {
+							"Icons": "/SAPAssetManager/Rules/Common/ListViewIconImages.js",
+							"Footnote": "",
+							"DetailImage": "/SAPAssetManager/Rules/Equipment/EquipmentDetailImage.js",
+							"PreserveIconStackSpacing": false
+						},
+						"MaxItemCount": 2,
+						"Target": {
+							"EntitySet": "{{#Property:@odata.readLink}}/Equipments",
+							"QueryOptions": "$expand=ObjectStatus_Nav/SystemStatus_Nav,EquipDocuments,EquipDocuments/Document"
+						},
+						"_Name": "SubEquipmentSection",
+						"DataSubscriptions": [
+							"MyEquipments",
+							"MyEquipDocuments"
+						]
+					}
+				},
+				"/SAPAssetManager/Pages/Fragments/Documents/DocumentsSection.fragment",
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Forms/SDF/FormObjectTableSection.fragment",
+					"Properties": {
+						"MaxItemCount": 2,
+						"Visible": "/SAPAssetManager/Rules/Forms/SDF/SDFIsFeatureEnabled.js"
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"DataSubscriptions": [
+						"WorkOrderHistories",
+						"ChecklistBusObjects",
+						"NotificationHistories"
+					],
+					"_Name": "SimplePropertyCollectionSection",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Notes/NotesCount.js",
+								"_Name": "SectionSimplePropertyCell0",
+								"KeyName": "$(L,notes)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Common/IsClassicLayoutEnabled.js",
+								"OnPress": "/SAPAssetManager/Rules/Notes/NotesViewNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/FunctionalLocation/FLOCWORelatedHistoriesCount.js",
+								"_Name": "SectionSimplePropertyCell1",
+								"KeyName": "$(L,related_work_orders)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Notifications/Details/WorkOrderHistoriesAreVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderRelatedHistoriesListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/WCM/Fragments/RelatedWorkPermitsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/WCM/Fragments/RelatedCertificatesFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceConfirmationsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceOrdersFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell2",
+								"KeyName": "$(L,hierarchy)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": true,
+								"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationHierarchyPageNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Notifications/RelatedNotifications/RelatedNotificationsCount.js",
+								"_Name": "SectionSimplePropertyCell3",
+								"KeyName": "$(L,related_notifications)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/WorkOrders/Details/RelatedNotificationsAreVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationsListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnersCount.js",
+								"_Name": "SectionSimplePropertyCell4",
+								"KeyName": "$(L,business_partners)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js",
+								"OnPress": "/SAPAssetManager/Actions/BusinessPartners/BusinessPartnersListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceRequestsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Classification/ClassificationCount.js",
+								"_Name": "SectionSimplePropertyCell5",
+								"KeyName": "$(L,classifications)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Classification/ClassificationIsVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/Classification/ClassificationListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Checklists/FunctionalLocation/FunctionalLocationChecklistsCount.js",
+								"_Name": "SectionSimplePropertyCell6",
+								"KeyName": "$(L,checklists)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Checklists/FunctionalLocation/FunctionalLocationDetailsShowChecklists.js",
+								"OnPress": "/SAPAssetManager/Rules/Checklists/ChecklistListViewNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell7",
+								"KeyName": "$(L,bom)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Material/BOM/BOMVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/Material/BOM/BOMPageNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell8",
+								"KeyName": "$(L,linear_data)",
+								"AccessoryType": "DisclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/LAM/LAMVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/LAM/LAMNav.js"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				}
+			],
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			}
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FunctionalLocationDetails",
+	"Caption": "$(L,functional_location)",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/WCM/Fragments/AddNotificationToEquipFlocButton.fragment",
+			{
+				"_Name": "Edit",
+				"Caption": "$(L,edit)",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/FunctionalLocation/CreateUpdate/FunctionalLocationEditEnabled.js",
+				"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/CreateUpdate/FunctionalLocationOpenEditPage.js"
+			},
+			{
+				"_Name": "FunctionalLocationOverflow",
+				"Caption": "$(L,menu)",
+				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png, '', /SAPAssetManager/Images/menuicon.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js",
+				"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationPopover.action"
+			}
+		],
+		"_Name": "ActionBar0"
+	}
+}

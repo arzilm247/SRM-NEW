@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "OdsOnlineServiceDownMessage"
+	},
+	"Message": "SRM ODS Online Service (S4H Down)",
+	"Title": "SRM ODS Online Service Down !",
+	"OKCaption": "OK"
+}

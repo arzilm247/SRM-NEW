@@ -1,0 +1,22 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "BinToBin_UpdateEntity"
+	},
+	"OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntityFailureMessage.action",
+	"OnSuccess": "/ZSSAM2405_SRM/Actions/CloseModalPage_Complete.action",
+	"OnFailureLog": {
+		"Level": "Off"
+	},
+	"Target": {
+		"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+		"EntitySet": "TOItemsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"SourceStorTyp": "",
+		"DestStorTyp": "",
+		"DestStorBin": "",
+		"TRNumber": ""
+	}
+}

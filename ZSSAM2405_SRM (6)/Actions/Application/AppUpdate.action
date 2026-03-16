@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/ZSSAM2405_SRM/Rules/Application/AppUpdateFailure.js",
+    "OnSuccess": "/ZSSAM2405_SRM/Rules/Application/AppUpdateSuccess.js"
+}

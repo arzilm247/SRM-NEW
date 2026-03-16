@@ -1,0 +1,22 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "Item_UpdateEntity"
+	},
+	"OnFailure": "/ZSSAM2405_SRM/Actions/SRM/TranferOrder/UpdateTOItemEntityFailureMessage.action",
+	"OnSuccess": "/ZSSAM2405_SRM/Actions/CloseModalPage_Complete.action",
+	"Target": {
+		"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+		"EntitySet": "TOItemsSet",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"WarehouseNum": "{WarehouseNum}",
+		"TransferOrder": "{TransferOrder}",
+		"TransOrdItem": "{TransOrdItem}",
+		"RequestedQty": "#Control:FCQuantityEdit/#Value"
+	},
+	"RequestOptions": {
+		"UpdateMode": "Merge"
+	}
+}

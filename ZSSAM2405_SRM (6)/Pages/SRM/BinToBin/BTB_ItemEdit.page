@@ -1,0 +1,148 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "{Material}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "Material",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Material",
+							"PlaceHolder": "Material",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{SourceStorBin}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SourceStoreBin",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Source Store Bin",
+							"PlaceHolder": "Source Store Bin",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{DestStorBin}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "DestinationBin",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Destination Bin",
+							"PlaceHolder": "Destination Bin",
+							"AlternateInput": "Barcode",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "DifferenceIndicator",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "Difference Indicator",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"PlaceHolder": "PlaceHolder",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"Search": {
+								"Placeholder": "Difference Indicator"
+							},
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": "{SourceStorTyp}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "SourceStorageType",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Source Storage Type",
+							"PlaceHolder": "Source Storage Type",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{DestStorTyp}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "DestinationStorageType",
+							"RequiredIndicator": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Destination Storage Type",
+							"PlaceHolder": "Destination Storage Type",
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 1
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "BTB_ItemEdit",
+	"ActionBar": {
+		"Items": [],
+		"_Name": "ActionBar2",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem0",
+				"Visible": true,
+				"Title": "SAVE",
+				"OnPress": "/ZSSAM2405_SRM/Actions/SRM/BinToBin/BinToBin_UpdateEntity.action",
+				"Enabled": true,
+				"ButtonType": "Primary",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
+}
