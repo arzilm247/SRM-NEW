@@ -1,0 +1,55 @@
+{
+    "Caption": "Create Resource (Public Cloud)",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "Left",
+                "SystemItem": "Cancel",
+                "OnPress": "/ZSSAM2405_SRM/Actions/CloseModalPage_Cancel.action"
+            },
+            {
+                "Position": "Right",
+                "SystemItem": "Save",
+                "Text": "Create",
+                "OnPress": "/ZSSAM2405_SRM/Rules/SRM/WarehouseResource/ZHandleCreateResource.js"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Controls": [
+                        {
+                            "Caption": "Warehouse Number",
+                            "IsEditable": true,
+                            "IsVisible": true,
+                            "KeyboardType": "Default",
+                            "PlaceHolder": "e.g. 1750",
+                            "Value": "",
+                            "_Name": "FC_Warehouse",
+                            "_Type": "Control.Type.FormCell.SimpleProperty"
+                        },
+                        {
+                            "Caption": "Resource ID",
+                            "IsEditable": true,
+                            "IsVisible": true,
+                            "KeyboardType": "Default",
+                            "PlaceHolder": "e.g. RES_01",
+                            "Value": "",
+                            "_Name": "FC_Resource",
+                            "_Type": "Control.Type.FormCell.SimpleProperty"
+                        }
+                    ],
+                    "Visible": true,
+                    "_Type": "Section.Type.FormCell",
+                    "_Name": "SectionFormCell0"
+                }
+            ],
+            "_Name": "FormCellContainer0",
+            "_Type": "Control.Type.SectionedTable"
+        }
+    ],
+    "_Name": "Create_WarehouseResource",
+    "_Type": "Page"
+}

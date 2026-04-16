@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.Navigation",
+    "ActionResult": {
+        "_Name": "NavToCreateResource"
+    },
+    "PageToOpen": "/ZSSAM2405_SRM/Pages/SRM/WarehouseResource/Create_WarehouseResource.page",
+    "ModalPresentation": true
+}
