@@ -1,5 +1,4 @@
-import libVal from '../../Common/Library/ValidationLibrary';
-import logger from '../../Log/Logger';
+
 
 /**
  * Load Physical Inventory items from online service to offline cache
@@ -10,8 +9,8 @@ export default async function LoadPIItemsToOffline(context) {
         const bindingObject = context.getBindingObject();
         const piDoc = bindingObject.PhyInvDoc;
         
-        if (libVal.evalIsEmpty(piDoc)) {
-            logger.error('LoadPIItemsToOffline', 'PhyInvDoc not found in binding');
+        if (!piDoc) {
+            console.error('LoadPIItemsToOffline: PhyInvDoc not found in binding');
             return context.executeAction('/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/LoadPIItemsFailureMessage.action');
         }
 
@@ -23,8 +22,8 @@ export default async function LoadPIItemsToOffline(context) {
             `$filter=PhyInvDoc eq '${piDoc}'`
         );
 
-        if (libVal.evalIsEmpty(onlineItems) || onlineItems.length === 0) {
-            logger.info('LoadPIItemsToOffline', 'No items found for PI: ' + piDoc);
+        if (!onlineItems || onlineItems.length === 0) {
+            console.info('LoadPIItemsToOffline: No items found for PI: ' + piDoc);
             // Still navigate even if no items
             return context.executeAction('/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/NavTo_ItemEditScreen.action');
         }
@@ -42,17 +41,17 @@ export default async function LoadPIItemsToOffline(context) {
                 );
             } catch (createError) {
                 // If create fails, item might already exist - continue
-                logger.info('LoadPIItemsToOffline', 'Item already exists or cannot be created: ' + createError.message);
+                console.info('LoadPIItemsToOffline: Item already exists or cannot be created: ' + createError.message);
             }
         }
 
-        logger.info('LoadPIItemsToOffline', 'Successfully loaded ' + onlineItems.length + ' items to offline cache');
+        console.info('LoadPIItemsToOffline: Successfully loaded ' + onlineItems.length + ' items to offline cache');
         
         // Navigate to edit screen after successful load
         return context.executeAction('/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/NavTo_ItemEditScreen.action');
 
     } catch (error) {
-        logger.error('LoadPIItemsToOffline', 'Error loading PI items: ' + error.message);
+        console.error('LoadPIItemsToOffline: Error loading PI items: ' + error.message);
         return context.executeAction('/ZSSAM2405_SRM/Actions/SRM/PhysicalInventory/LoadPIItemsFailureMessage.action');
     }
 }
