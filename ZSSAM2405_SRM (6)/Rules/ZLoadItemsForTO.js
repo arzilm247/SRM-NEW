@@ -16,13 +16,12 @@ export default async function ZLoadItemsForTO(clientAPI) {
 
     appClientData.AllItemsList = [];
     for (let i = 0; i < result.length; i++) {
-        const item = result.getItem(i);
+        const item = result[i]; // context.read() returns a plain JS array
 
-        //  Apply material filter ONLY if material exists
+        // Apply material filter ONLY if material is set
         if (!material || item.Material === material) {
             appClientData.AllItemsList.push(item);
         }
-        //appClientData.AllItemsList.push(result.getItem(i));
     }
 
     appClientData.FilteredItemsList = appClientData.AllItemsList;
