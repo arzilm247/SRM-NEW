@@ -1,73 +1,88 @@
-// Helper to Base64 encode credentials natively across environments
-function encodeBase64(str) {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-    let output = '';
-    for (let block, charCode, idx = 0, map = chars;
-        str.charAt(idx | 0) || (map = '=', idx % 1);
-        output += map.charAt(63 & block >> 8 - idx % 1 * 8)) {
-        charCode = str.charCodeAt(idx += 3 / 4);
-        if (charCode > 0xFF) throw new Error("btoa failed.");
-        block = block << 8 | charCode;
-    }
-    return output;
-}
+/**
+ * ZWarehouseResourceAPI.js
+ * API layer for SAP Warehouse Resource (A2X OData V4) operations.
+ * Uses MDK-native context.create() — NOT fetch() or XMLHttpRequest,
+ * which are not available in the MDK JSCore runtime.
+ *
+ * The BTP Destination "ODSMWH" (or the relevant A2X destination) must be
+ * configured in SAP Mobile Services and referenced via a .service file.
+ * Credentials are managed by the BTP destination — NOT hardcoded here.
+ */
 
-const AUTH_HEADER = "Basic " + encodeBase64("ODS_COMM_USER:NyAXndoxKbW6=TTW\\#9]S\\afQt4u{TxM9c<fe4NS");
-const BASE_URL = "https://my432407-api.s4hana.cloud.sap:443/sap/opu/odata4/sap/api_warehouse_resource_2/srvd_a2x/sap/warehouseresource/0001";
+const SERVICE_PATH = '/ZSSAM2405_SRM/Services/ODSMWH.service';
+const ENTITY_SET   = 'WarehouseResource';
 
 /**
- * Handles the creation of a literal Warehouse Resource in Public Cloud
- * Expects { EWMWarehouse: string, EWMResource: string }
+ * Creates a Warehouse Resource entity in the SAP S/4HANA Public Cloud backend.
+ *
+ * @param {IClientAPI} clientAPI   - MDK clientAPI/context passed from the calling rule
+ * @param {{ EWMWarehouse: string, EWMResource: string }} payload - The fields to create
+ * @returns {Promise<void>}
  */
-export async function createWarehouseResource(payload) {
-    // 1. Fetch CSRF Token
-    const fetchHeaders = new Headers();
-    fetchHeaders.append("Authorization", AUTH_HEADER);
-    fetchHeaders.append("x-csrf-token", "Fetch");
-
-    // Do a GET against the entity set to snag the token quickly
-    const tokenResponse = await fetch(`${BASE_URL}/WarehouseResource?$top=1`, {
-        method: "GET",
-        headers: fetchHeaders
-    });
-
-    const csrfToken = tokenResponse.headers.get("x-csrf-token");
-
-    // 2. Prepare POST payload
-    const postHeaders = new Headers();
-    postHeaders.append("Authorization", AUTH_HEADER);
-    postHeaders.append("Content-Type", "application/json");
-    if (csrfToken) {
-        postHeaders.append("x-csrf-token", csrfToken);
-    }
-    
-    // Cookie injection for sticky sessions handled by platform fetch
-    const cookie = tokenResponse.headers.get("set-cookie");
-    if (cookie) {
-        postHeaders.append("Cookie", cookie);
+export async function createWarehouseResource(clientAPI, payload) {
+    // Validate required fields before sending
+    if (!payload.EWMWarehouse || !payload.EWMResource) {
+        throw new Error('EWMWarehouse and EWMResource are both required.');
     }
 
-    // 3. Make the POST Request
-    const createResponse = await fetch(`${BASE_URL}/WarehouseResource`, {
-        method: "POST",
-        headers: postHeaders,
-        body: JSON.stringify(payload)
-    });
+    try {
+        // MDK-native OData V4 create — runs through the BTP destination config,
+        // handles CSRF token and session cookies automatically.
+        const result = await clientAPI.create(
+            SERVICE_PATH,
+            ENTITY_SET,
+            payload,
+            {} // Additional headers if needed (e.g. sap-client)
+        );
 
-    if (!createResponse.ok) {
-        const errorText = await createResponse.text();
-        // Parse SAP standard error JSON if possible
-        try {
-            const errObj = JSON.parse(errorText);
-            if (errObj.error && errObj.error.message) {
-                throw new Error(errObj.error.message);
+        return result;
+
+    } catch (err) {
+        // Attempt to extract SAP OData V4 error message from the error payload
+        let errorMessage = String(err && err.message ? err.message : err);
+
+        // SAP OData V4 wraps errors in err.responseBody or err.error
+        if (err && err.responseBody) {
+            try {
+                const body = (typeof err.responseBody === 'string')
+                    ? JSON.parse(err.responseBody)
+                    : err.responseBody;
+
+                if (body && body.error && body.error.message) {
+                    errorMessage = body.error.message;
+                }
+            } catch (_) {
+                // ignore JSON parse errors — keep original message
             }
-        } catch (e) {
-            // keep default behavior if JSON parsing fails
         }
-        throw new Error(`Failed to create resource. Status: ${createResponse.status} ${errorText}`);
-    }
 
-    if (createResponse.status === 204) return { success: true };
-    return await createResponse.json();
+        throw new Error(errorMessage);
+    }
+}
+
+/**
+ * Reads all warehouse resources for a given warehouse number.
+ * Useful for verifying creation or populating a list screen.
+ *
+ * @param {IClientAPI} clientAPI
+ * @param {string} warehouseNum
+ * @returns {Promise<Array>}
+ */
+export async function fetchWarehouseResources(clientAPI, warehouseNum) {
+    const filter = warehouseNum
+        ? `$filter=EWMWarehouse eq '${warehouseNum.replace(/'/g, "''")}'`
+        : '';
+
+    try {
+        const results = await clientAPI.read(
+            SERVICE_PATH,
+            ENTITY_SET,
+            [],
+            filter
+        );
+        return results || [];
+    } catch (err) {
+        console.error('[ZWarehouseResourceAPI] fetchWarehouseResources error:', err);
+        throw err;
+    }
 }
