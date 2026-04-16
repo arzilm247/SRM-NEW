@@ -3,10 +3,7 @@
  * @param {IClientAPI} context
  */
 export default function ZTOHeaderQueryOptions(context) {
-   const searchText = context.searchString;
-
-    // Optional alert to debug what is being typed
-    alert(`Search text: ${searchText}`);
+    const searchText = context.searchString;
 
     if (!searchText || searchText.trim() === '') {
         return '';

@@ -9,14 +9,11 @@
 		"Level": "Off"
 	},
 	"Target": {
-		"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+		"Service": "/ZSSAM2405_SRM/Services/ODSMWH.service",
 		"EntitySet": "TOItemsSet",
 		"ReadLink": "{@odata.readLink}"
 	},
 	"Properties": {
-		"SourceStorTyp": "",
-		"DestStorTyp": "",
-		"DestStorBin": "",
-		"TRNumber": ""
+		"DestTargQty": "#Control:FCMovementQuantity/#Value"
 	}
 }

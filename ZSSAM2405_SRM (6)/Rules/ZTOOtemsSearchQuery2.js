@@ -2,17 +2,17 @@ export default function ZTOOtemsSearchQuery2(context) {
     const bindingObject = context.getBindingObject();
     const TRO = bindingObject.TransferOrder;
     const searchText = (context.searchString || '').trim();
-    alert(searchText);
+    // alert(searchText); // DEBUG - removed
 
     const results = context.read(
-        '/ZSSAM2405_SRM/Services/OnlineAssetManager.service',
+        '/ZSSAM2405_SRM/Services/ODSMWH.service',
         'TOItemsSet',
         [],
         `$filter=TransferOrder eq '${TRO}'`
     );
 
     let items = results.getItems();
-    alert(JSON.stringify(items));
+    // alert(JSON.stringify(items)); // DEBUG - removed
 
     // // 🔥 HARD FILTER by Material
     // if (searchText) {
