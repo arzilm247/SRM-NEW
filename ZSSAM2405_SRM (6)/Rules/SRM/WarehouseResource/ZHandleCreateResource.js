@@ -2,56 +2,55 @@ import { createWarehouseResource } from './ZWarehouseResourceAPI';
 
 /**
  * Triggered by the "Create" button on the Create_WarehouseResource page.
+ * Validates inputs, calls the API layer, and handles success/failure.
  * @param {IClientAPI} clientAPI
  */
 export default async function ZHandleCreateResource(clientAPI) {
-    // Read the FormCell values from the Current Page
+    // Read the FormCell values from the current page
     const warehouse = clientAPI.evaluateTargetPath('#Page:Create_WarehouseResource/#Control:FC_Warehouse/#Value');
-    const resource = clientAPI.evaluateTargetPath('#Page:Create_WarehouseResource/#Control:FC_Resource/#Value');
+    const resource  = clientAPI.evaluateTargetPath('#Page:Create_WarehouseResource/#Control:FC_Resource/#Value');
 
-    if (!warehouse || !resource) {
+    // Validation — both fields are required
+    if (!warehouse || !warehouse.trim() || !resource || !resource.trim()) {
         return clientAPI.executeAction({
-            "Name": "/ZSSAM2405_SRM/Actions/GenericMessageBox.action",
-            "Properties": {
-                "Message": "Please provide both Warehouse and Resource ID to proceed.",
-                "Title": "Validation Error"
-            }
+            "_Type": "Action.Type.Message",
+            "Message": "Please provide both Warehouse Number and Resource ID.",
+            "Title": "Validation Error",
+            "OKCaption": "OK",
+            "MessageType": "Error"
         });
     }
 
-    clientAPI.showActivityIndicator('Creating Resource in Public Cloud...');
+    clientAPI.showActivityIndicator('Creating Resource...');
 
     try {
-        await createWarehouseResource({
+        await createWarehouseResource(clientAPI, {
             "EWMWarehouse": warehouse.trim().toUpperCase(),
-            "EWMResource": resource.trim().toUpperCase()
+            "EWMResource":  resource.trim().toUpperCase()
         });
 
         clientAPI.dismissActivityIndicator();
-        
-        // Success Message
+
+        // Show success banner then close modal
         await clientAPI.executeAction({
-            "Name": "/ZSSAM2405_SRM/Actions/Message/BannerMessage.action",
-            "Properties": {
-                "Message": `Resource ${resource.toUpperCase()} created successfully!`,
-                "BannerMessageType": "Success"
-            }
+            "_Type": "Action.Type.Message.BannerMessage",
+            "Message": `Resource ${resource.trim().toUpperCase()} created successfully`,
+            "BannerMessageType": "Success",
+            "DurationInMilliseconds": 3000
         });
 
-        // Close Modal Page on Success
         return clientAPI.executeAction('/ZSSAM2405_SRM/Actions/CloseModalPage_Complete.action');
 
     } catch (err) {
         clientAPI.dismissActivityIndicator();
-        console.error(err);
-        
+        console.error('[ZHandleCreateResource]', err);
+
         return clientAPI.executeAction({
-            "Name": "/ZSSAM2405_SRM/Actions/GenericMessageBox.action",
-            "Properties": {
-                "Message": String(err.message || err),
-                "Title": "API Creation Error",
-                "OKCaption": "Close"
-            }
+            "_Type": "Action.Type.Message",
+            "Message": String(err.message || err),
+            "Title": "Creation Failed",
+            "OKCaption": "Close",
+            "MessageType": "Error"
         });
     }
 }

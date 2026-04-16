@@ -1,55 +1,91 @@
 {
-    "Caption": "Create Resource (Public Cloud)",
+    "Caption": "Create Resource",
     "ActionBar": {
+        "_Type": "Control.Type.ActionBar",
+        "_Name": "ActionBar0",
         "Items": [
             {
+                "_Type": "Control.Type.ActionBarItem",
+                "_Name": "CancelBtn",
                 "Position": "Left",
                 "SystemItem": "Cancel",
                 "OnPress": "/ZSSAM2405_SRM/Actions/CloseModalPage_Cancel.action"
-            },
-            {
-                "Position": "Right",
-                "SystemItem": "Save",
-                "Text": "Create",
-                "OnPress": "/ZSSAM2405_SRM/Rules/SRM/WarehouseResource/ZHandleCreateResource.js"
             }
         ]
     },
     "Controls": [
         {
+            "FilterFeedbackBar": {
+                "ShowAllFilters": false,
+                "_Type": "Control.Type.FilterFeedbackBar"
+            },
             "Sections": [
                 {
+                    "Separators": {
+                        "TopSectionSeparator": false,
+                        "BottomSectionSeparator": true,
+                        "HeaderSeparator": true,
+                        "FooterSeparator": true,
+                        "ControlSeparator": true
+                    },
                     "Controls": [
                         {
+                            "_Type": "Control.Type.FormCell.SimpleProperty",
+                            "_Name": "FC_Warehouse",
                             "Caption": "Warehouse Number",
+                            "PlaceHolder": "e.g. 1750",
+                            "KeyboardType": "Default",
                             "IsEditable": true,
                             "IsVisible": true,
-                            "KeyboardType": "Default",
-                            "PlaceHolder": "e.g. 1750",
-                            "Value": "",
-                            "_Name": "FC_Warehouse",
-                            "_Type": "Control.Type.FormCell.SimpleProperty"
+                            "RequiredIndicator": true,
+                            "Separator": true,
+                            "Value": ""
                         },
                         {
+                            "_Type": "Control.Type.FormCell.SimpleProperty",
+                            "_Name": "FC_Resource",
                             "Caption": "Resource ID",
+                            "PlaceHolder": "e.g. RES_01",
+                            "KeyboardType": "Default",
                             "IsEditable": true,
                             "IsVisible": true,
-                            "KeyboardType": "Default",
-                            "PlaceHolder": "e.g. RES_01",
-                            "Value": "",
-                            "_Name": "FC_Resource",
-                            "_Type": "Control.Type.FormCell.SimpleProperty"
+                            "RequiredIndicator": true,
+                            "Separator": true,
+                            "Value": ""
                         }
                     ],
                     "Visible": true,
                     "_Type": "Section.Type.FormCell",
-                    "_Name": "SectionFormCell0"
+                    "_Name": "SectionFormCell0",
+                    "EmptySection": {
+                        "FooterVisible": false
+                    },
+                    "Layout": {
+                        "NumberOfColumns": 1
+                    }
                 }
             ],
             "_Name": "FormCellContainer0",
             "_Type": "Control.Type.SectionedTable"
         }
     ],
+    "FioriToolbar": {
+        "_Type": "Control.Type.FioriToolbar",
+        "_Name": "FioriToolbar0",
+        "Items": [
+            {
+                "_Type": "FioriToolbarItem.Type.Button",
+                "_Name": "CreateBtn",
+                "Title": "Create",
+                "Visible": true,
+                "Enabled": true,
+                "ButtonType": "Primary",
+                "Semantic": "Tint",
+                "ImagePosition": "Leading",
+                "OnPress": "/ZSSAM2405_SRM/Rules/SRM/WarehouseResource/ZHandleCreateResource.js"
+            }
+        ]
+    },
     "_Name": "Create_WarehouseResource",
     "_Type": "Page"
 }
