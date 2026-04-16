@@ -8,5 +8,7 @@ export default function ZRestFunctionOnTOSearch(clientAPI) {
 
     if (documentNumberCtrl) documentNumberCtrl.setValue('');
     if (materialCtrl) materialCtrl.setValue('');
+
+
 }
 

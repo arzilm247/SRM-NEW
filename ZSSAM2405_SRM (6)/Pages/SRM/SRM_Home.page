@@ -131,6 +131,20 @@
 							"Visible": true,
 							"Enabled": true,
 							"OnPress": "/ZSSAM2405_SRM/Actions/SRM/StockWarehouse/NavTo_SWSeach.action"
+						},
+						{
+							"_Type": "ButtonTable.Type.Button",
+							"_Name": "ButtonTableTypeButton6",
+							"Title": "Create Resource",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"Image": "res://mdk_logo.png",
+							"ImagePosition": "Leading",
+							"FullWidth": false,
+							"Visible": true,
+							"Enabled": true,
+							"OnPress": "/ZSSAM2405_SRM/Actions/SRM/WarehouseResource/NavToCreateResource.action"
 						}
 					]
 				}
