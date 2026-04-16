@@ -1,5 +1,5 @@
-
-
+// Note: SAPAssetManager imports (ValidationLibrary, Logger) were removed from this file
+// because they are not available during local extension build compilation.
 /**
  * Load Physical Inventory items from online service to offline cache
  * @param {IClientAPI} context
