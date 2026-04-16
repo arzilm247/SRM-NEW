@@ -1,9 +1,7 @@
 {
-	"_Type": "Action.Type.Message",
+	"_Type": "Action.Type.RuleAction",
 	"ActionResult": {
 		"_Name": "ConfirmAll"
 	},
-	"Message": "Confirmed all transfer order items",
-	"Title": "Confirmed",
-	"OKCaption": "OK"
+	"RuleName": "/ZSSAM2405_SRM/Rules/SRM/TransferOrder/ZConfirmAllTOItems.js"
 }

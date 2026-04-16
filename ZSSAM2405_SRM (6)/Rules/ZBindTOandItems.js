@@ -34,7 +34,7 @@ export default async function ZBindTOandItems(context) {
 
 export async function GetItems(context, TRO) {
     const ItemsResults = await context.read(
-        '/ZSSAM2405_SRM/Services/OnlineAssetManager.service',
+        '/ZSSAM2405_SRM/Services/ODSMWH.service',
         'TOItemsSet',
         [],
         `$filter=TransferOrder eq '${TRO}'`

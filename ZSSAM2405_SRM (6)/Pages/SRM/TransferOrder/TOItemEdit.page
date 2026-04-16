@@ -62,13 +62,13 @@
 							"IsEditable": false
 						},
 						{
-							"Value": "{ActualQty}",
+							"Value": "{DestTargQty}",
 							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "FCQuantityEdit",
 							"RequiredIndicator": false,
 							"IsVisible": true,
 							"Separator": true,
-							"Caption": "Quantity",
+							"Caption": "Destination Target Qty",
 							"KeyboardType": "Number",
 							"Enabled": true,
 							"IsEditable": true
@@ -110,7 +110,7 @@
 		}
 	],
 	"DesignTimeTarget": {
-		"Service": "/ZSSAM2405_SRM/Services/OnlineAssetManager.service",
+		"Service": "/ZSSAM2405_SRM/Services/ODSMWH.service",
 		"EntitySet": "TOItemsSet"
 	},
 	"_Type": "Page",

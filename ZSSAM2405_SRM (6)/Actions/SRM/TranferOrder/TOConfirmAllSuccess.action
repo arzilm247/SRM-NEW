@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "TOConfirmAllSuccess"
+	},
+	"Message": "All transfer order items confirmed successfully.",
+	"Title": "Confirmed",
+	"OKCaption": "OK",
+	"MessageType": "Success",
+	"OnOK": "/ZSSAM2405_SRM/Actions/CloseModalPage_Complete.action"
+}

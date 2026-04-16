@@ -146,7 +146,7 @@
 				"_Name": "Confirm",
 				"Visible": true,
 				"Title": "Confirm All ",
-				"OnPress": "/ZSSAM2405_SRM/Actions/ConfirmAll.action",
+				"OnPress": "/ZSSAM2405_SRM/Rules/ZConfirmAllTOItems.js",
 				"Enabled": true,
 				"ButtonType": "Primary",
 				"Semantic": "Tint",

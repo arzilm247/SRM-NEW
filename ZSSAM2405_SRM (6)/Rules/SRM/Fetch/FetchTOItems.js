@@ -11,7 +11,7 @@ export default function FetchTOItems(context) {
     return context.executeAction('/ZSSAM2405_SRM/Actions/SRM/OData/CreateOnlineOData.action')
         .then(() => {
             return context.read(
-                '/ZSSAM2405_SRM/Services/OnlineAssetManager.service',
+                '/ZSSAM2405_SRM/Services/ODSMWH.service',
                 'TOItemsSet',
                 [],
                 `$filter=TransferOrder eq '${TransferOrder}'`
@@ -19,7 +19,8 @@ export default function FetchTOItems(context) {
         })
         .then(TOItemsSetResults => {
             if (TOItemsSetResults && TOItemsSetResults.length > 0) {
-                alert("TOItemsSetResults : " + JSON.stringify(TOItemsSetResults.getItem(0)));
+                // alert("TOItemsSetResults : " + JSON.stringify(TOItemsSetResults.getItem(0))); // DEBUG - removed
+                console.log("FetchTOItems: loaded " + TOItemsSetResults.length + " items");
             }
         });
 }
